@@ -5,14 +5,13 @@
   box-sizing: border-box;
 }
 
-/* ===== Root Colors ===== */
+/* ===== Root Colours ===== */
 :root {
   --bg-color: #f8f9fa;
   --text-color: #1a1a1a;
   --accent-color: #004aad;
   --secondary-color: #e5e5e5;
-  --sidebar-bg: #ffffff;
-  --main-bg: #ffffff;
+  --card-bg: #ffffff;
 }
 
 /* ===== Body ===== */
@@ -24,44 +23,95 @@ body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.6;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* ===== Container (full width main layout) ===== */
-.container {
-  display: flex;
-  flex: 1; /* fill available space between header and footer */
-  background: var(--main-bg);
+/* ===== Header ===== */
+header {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
 }
 
-/* ===== Sidebar ===== */
-.sidebar {
-  width: 25%;
-  background-color: var(--sidebar-bg);
-  padding: 40px 30px;
-  border-right: 2px solid var(--secondary-color);
-}
-
-.sidebar h1 {
+header h1 {
   font-size: 28px;
-  color: var(--accent-color);
-  margin-bottom: 8px;
+  letter-spacing: 1px;
 }
 
-.sidebar p {
+/* ===== Main Content ===== */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: var(--card-bg);
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  color: var(--accent-color);
   margin-bottom: 10px;
-  color: #444;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--secondary-color);
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
-.sidebar h3 {
-  margin-top: 25px;
-  font-size: 18px;
-  text-transform: uppercase;
+section p, section li {
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+section ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+section li {
+  border-left: 3px solid var(--accent-color);
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+/* ===== Links ===== */
+a {
   color: var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 5px;
-  ma
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: var(--card-bg);
+  border-top: 2px solid var(--secondary-color);
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  color: #555;
+  margin-top: auto; /* keeps footer at bottom */
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  main {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+}
