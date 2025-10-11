@@ -50,6 +50,19 @@
     <a href="files/Project.py" download>Download Code (.py)</a>
   </div>
 
+  <div class="code-box">
+  <pre><code>
+# Robotic Cell Management System
+# Uses threading to manage robots, workers, and tasks
+def add_new_robot(robot_id):
+    if robot_id.strip() == "":
+        print("Robot ID can't be blank.")
+        return
+    robots[robot_id] = 'idle'
+    print(f"Robot '{robot_id}' added successfully!")
+  </code></pre>
+</div>
+
     </article>
 
 
