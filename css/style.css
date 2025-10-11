@@ -65,12 +65,12 @@ article:last-child {
 }
 
 article h2 {
-  color: #0b1b2b;
-  font-size: 22px;
-  border-left: 4px solid #004aad; /* blue accent bar */
-  padding-left: 10px;
-  margin-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  color: #0b1a33;
 }
+
 
 article p,
 article li {
@@ -89,6 +89,38 @@ article li {
   padding-left: 10px;
   margin-bottom: 15px;
 }
+
+/* ===== Projects Section ===== */
+.project {
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.project h3 {
+  color: #0b1a33;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.project p {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project a {
+  color: #004aad;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
 
 /* ====== Links ====== */
 a {
