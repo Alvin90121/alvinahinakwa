@@ -1,112 +1,98 @@
-/* ===== Base Reset ===== */
+/* ====== Reset & Base Styles ====== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== Root Colors ===== */
-:root {
-  --bg-color: #f8f9fa;
-  --text-color: #1a1a1a;
-  --accent-color: #004aad;
-  --secondary-color: #e5e5e5;
-  --sidebar-bg: #ffffff;
-  --main-bg: #ffffff;
-}
-
-/* ===== Body ===== */
 html, body {
   height: 100%;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #ffffff; /* white background */
+  color: #0b1b2b; /* dark navy text */
+  line-height: 1.7;
 }
 
+/* ====== Layout ====== */
 body {
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
 }
 
-/* ===== Container (full width main layout) ===== */
-.container {
-  display: flex;
-  flex: 1; /* fill available space between header and footer */
-  background: var(--main-bg);
+/* ====== Header ====== */
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  border-bottom: 2px solid #d9d9d9; /* light grey accent */
+  width: 100%;
+  background-color: #ffffff;
 }
 
-/* ===== Sidebar ===== */
-.sidebar {
-  width: 25%;
-  background-color: var(--sidebar-bg);
-  padding: 40px 30px;
-  border-right: 2px solid var(--secondary-color);
-}
-
-.sidebar h1 {
-  font-size: 28px;
-  color: var(--accent-color);
-  margin-bottom: 8px;
-}
-
-.sidebar p {
+header h1 {
+  font-size: 32px;
+  color: #0b1b2b;
   margin-bottom: 10px;
-  color: #444;
 }
 
-.sidebar h3 {
-  margin-top: 25px;
-  font-size: 18px;
-  text-transform: uppercase;
-  color: var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 5px;
-  margin-bottom: 8px;
+header .tagline {
+  font-size: 16px;
+  color: #555;
 }
 
-/* ===== Main Content (now full-width area) ===== */
-.main {
-  flex: 1; /* take all remaining space */
+/* ====== Main Content (Blog Style Box) ====== */
+main {
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9; /* light grey border */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
   padding: 40px 50px;
 }
 
-.main section {
+/* ====== Articles ====== */
+article {
   margin-bottom: 40px;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 30px;
 }
 
-.main h2 {
+article:last-child {
+  border-bottom: none;
+}
+
+article h2 {
+  color: #0b1b2b;
   font-size: 22px;
-  margin-bottom: 10px;
-  color: var(--accent-color);
-  text-transform: uppercase;
-  border-bottom: 2px solid var(--secondary-color);
-  display: inline-block;
-  padding-bottom: 4px;
+  border-left: 4px solid #004aad; /* blue accent bar */
+  padding-left: 10px;
+  margin-bottom: 15px;
 }
 
-.main p,
-.main li {
+article p,
+article li {
+  margin-top: 10px;
   color: #333;
-  margin-top: 8px;
 }
 
-.main ul {
+article ul {
   list-style: none;
   margin-top: 10px;
-}
-
-.main li {
-  margin-bottom: 15px;
   padding-left: 10px;
-  border-left: 3px solid var(--accent-color);
 }
 
-/* ===== Links ===== */
+article li {
+  border-left: 3px solid #004aad;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+/* ====== Links ====== */
 a {
-  color: var(--accent-color);
+  color: #004aad; /* blue highlight */
   text-decoration: none;
   font-weight: 500;
 }
@@ -115,41 +101,30 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== Footer (sticks to bottom) ===== */
+/* ====== Footer ====== */
 footer {
-  background-color: var(--sidebar-bg);
-  border-top: 2px solid var(--secondary-color);
   text-align: center;
-  padding: 15px 0;
+  border-top: 2px solid #d9d9d9;
+  padding: 20px;
+  width: 100%;
   font-size: 14px;
   color: #555;
-  margin-top: auto; /* pushes footer to bottom */
+  background-color: #ffffff;
+  margin-top: auto;
 }
 
-/* ===== Buttons (optional future use) ===== */
-button, .btn {
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-button:hover, .btn:hover {
-  background-color: #003080;
-}
-
-/* ===== Responsive ===== */
+/* ====== Responsive Design ====== */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
+  main {
+    width: 95%;
+    padding: 25px 20px;
   }
 
-  .sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 2px solid var(--secondary-color);
+  header h1 {
+    font-size: 26px;
+  }
+
+  article h2 {
+    font-size: 20px;
   }
 }
