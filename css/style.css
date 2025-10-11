@@ -5,16 +5,16 @@
   box-sizing: border-box;
 }
 
-/* ===== Root Colours ===== */
+/* ===== Root Colors ===== */
 :root {
   --bg-color: #f8f9fa;
   --text-color: #1a1a1a;
   --accent-color: #004aad;
   --secondary-color: #e5e5e5;
-  --card-bg: #ffffff;
+  --main-bg: #ffffff;
 }
 
-/* ===== Body Layout ===== */
+/* ===== Body ===== */
 html, body {
   height: 100%;
 }
@@ -23,73 +23,70 @@ body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
+  line-height: 1.6;
+
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  align-items: center;
 }
 
 /* ===== Header ===== */
 header {
+  width: 100%;
   background-color: var(--accent-color);
   color: white;
+  padding: 20px 0;
   text-align: center;
-  padding: 25px 0;
 }
 
 header h1 {
   font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 /* ===== Main Content ===== */
 main {
   flex: 1;
-  display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center;     /* center vertically (optional) */
-  padding: 60px 20px;
-}
-
-.content {
-  background-color: var(--card-bg);
-  width: 80%;
+  width: 90%;
   max-width: 900px;
+  background-color: var(--main-bg);
+  padding: 40px 50px;
+  margin: 40px auto;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-  padding: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
 }
 
-/* ===== Section Styles ===== */
-section {
+/* Section styling */
+main section {
   margin-bottom: 40px;
 }
 
-section h2 {
-  color: var(--accent-color);
+main h2 {
   font-size: 22px;
+  color: var(--accent-color);
   text-transform: uppercase;
   border-bottom: 2px solid var(--secondary-color);
   display: inline-block;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
 }
 
-section p, section li {
+main p,
+main li {
   color: #333;
-  margin-top: 10px;
-  line-height: 1.6;
+  margin-top: 8px;
 }
 
-section ul {
+main ul {
   list-style: none;
-  padding-left: 10px;
+  margin-top: 10px;
 }
 
-section li {
-  border-left: 3px solid var(--accent-color);
-  padding-left: 10px;
+main li {
   margin-bottom: 15px;
+  padding-left: 10px;
+  border-left: 3px solid var(--accent-color);
 }
 
 /* ===== Links ===== */
@@ -105,7 +102,8 @@ a:hover {
 
 /* ===== Footer ===== */
 footer {
-  background-color: var(--card-bg);
+  width: 100%;
+  background-color: var(--main-bg);
   border-top: 2px solid var(--secondary-color);
   text-align: center;
   padding: 15px 0;
@@ -114,11 +112,27 @@ footer {
   margin-top: auto;
 }
 
+/* ===== Buttons (optional for projects/links) ===== */
+button, .btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #003080;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .content {
+  main {
     width: 95%;
-    padding: 25px;
+    padding: 25px 20px;
   }
 
   header h1 {
