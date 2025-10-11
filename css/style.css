@@ -7,40 +7,40 @@
 
 /* ===== Root Colors ===== */
 :root {
-  --bg-color: #f8f9fa;           /* light background */
-  --text-color: #1a1a1a;         /* main text */
-  --accent-color: #004aad;       /* blue accent */
-  --secondary-color: #e5e5e5;    /* subtle dividers */
-  --sidebar-bg: #ffffff;         /* sidebar background */
-  --main-bg: #ffffff;            /* main content background */
+  --bg-color: #f8f9fa;
+  --text-color: #1a1a1a;
+  --accent-color: #004aad;
+  --secondary-color: #e5e5e5;
+  --sidebar-bg: #ffffff;
+  --main-bg: #ffffff;
 }
 
 /* ===== Body ===== */
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
-  padding: 40px;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* ===== Layout ===== */
+/* ===== Container (full width main layout) ===== */
 .container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 40px;
-  max-width: 1000px;
-  width: 100%;
+  display: flex;
+  flex: 1; /* fill available space between header and footer */
   background: var(--main-bg);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  overflow: hidden;
 }
 
 /* ===== Sidebar ===== */
 .sidebar {
+  width: 25%;
   background-color: var(--sidebar-bg);
   padding: 40px 30px;
   border-right: 2px solid var(--secondary-color);
@@ -67,9 +67,10 @@ body {
   margin-bottom: 8px;
 }
 
-/* ===== Main Content ===== */
+/* ===== Main Content (now full-width area) ===== */
 .main {
-  padding: 40px 30px;
+  flex: 1; /* take all remaining space */
+  padding: 40px 50px;
 }
 
 .main section {
@@ -114,12 +115,15 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== Footer ===== */
+/* ===== Footer (sticks to bottom) ===== */
 footer {
+  background-color: var(--sidebar-bg);
+  border-top: 2px solid var(--secondary-color);
   text-align: center;
-  margin-top: 30px;
+  padding: 15px 0;
   font-size: 14px;
   color: #555;
+  margin-top: auto; /* pushes footer to bottom */
 }
 
 /* ===== Buttons (optional future use) ===== */
@@ -140,10 +144,11 @@ button:hover, .btn:hover {
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .sidebar {
+    width: 100%;
     border-right: none;
     border-bottom: 2px solid var(--secondary-color);
   }
