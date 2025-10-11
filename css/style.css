@@ -121,6 +121,20 @@ article li {
   text-decoration: underline;
 }
 
+.code-box {
+  background-color: #f5f5f5;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  padding: 15px;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.code-box code {
+  font-family: Consolas, monospace;
+  color: #0b1a33;
+}
+
 
 /* ====== Links ====== */
 a {
